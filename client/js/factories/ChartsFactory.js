@@ -193,7 +193,7 @@
 
             ApiFactory.getUser()
                 .then(function(response) {
-                    console.log(response.data.dataUser.yearly)
+            
 
                     // create the chart
                     Highcharts.stockChart('chart-daily', {
