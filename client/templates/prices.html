@@ -1,0 +1,39 @@
+<ng-include src="'/templates/navbar.html'"></ng-include>
+
+<div class="col-sm-9 col-lg-10 container prices">
+    <div id="prices-day-button">
+        <h2>Hourly Energy Prices</h2>
+        <p>Today's cheapest and most expensive hour is displayed in the screen. If you want to see the 24h energy price click <span class="all-prices"><a href="/#!/charts"> HERE </a></span></p>
+        <h4>Your Energy Tariff is: <span class ="energyTariff">{{energyTariff}}</span></h4>
+        <h4>Today is: <span class ="energyTariff">{{min.date}}</span></h4>
+        <!-- <button type="text" href="/#!/charts" class="btn btn-info">{{min.date}}</button> -->
+    </div>
+    <div class="col-sm-4 col-sm-offset-1 circle-min-price">
+        <h4>Cheapest hour</h4>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 160 160">
+            <g>
+                <circle style="fill:transparent;stroke:#F2CF61;stroke-width:1;stroke-miterlimit:10;" cx="80" cy="80" r="80">
+                </circle>
+                <circle style="fill:transparent;stroke:#F2CF61;stroke-width:1;stroke-miterlimit:10;" cx="80" cy="80" r="85">
+                </circle>
+                <text class="circle-prices-date" x="50%" y="40%" text-anchor="middle" fill="#F2CF61">{{min.hour}}</text>
+                <text class="circle-prices" x="50%" y="65%" text-anchor="middle" fill="#4AB8A1">{{min.price}}</text>
+                <text class="circle-prices-units" x="50%" y="80%" text-anchor="middle" fill="#4AB8A1">€/kWh</text>
+            </g>
+        </svg>
+    </div>
+    <div class="col-sm-4 col-sm-offset-2 circle-max-price">
+        <h4>Expensive hour</h4>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 160 160">
+            <g>
+                <circle style="fill:transparent;stroke:#F2CF61;stroke-width:1;stroke-miterlimit:10;" cx="80" cy="80" r="80">
+                </circle>
+                <circle style="fill:transparent;stroke:#F2CF61;stroke-width:1;stroke-miterlimit:10;" cx="80" cy="80" r="85">
+                </circle>
+                <text class="circle-prices-date" x="50%" y="40%" text-anchor="middle" fill="#F2CF61">{{max.hour}}</text>
+                <text class="circle-prices" x="50%" y="65%" text-anchor="middle" fill="#4AB8A1">{{max.price}}</text>
+                <text class="circle-prices-units" x="50%" y="80%" text-anchor="middle" fill="#4AB8A1">€/kWh</text>
+            </g>
+        </svg>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<ng-include src="'/templates/navbar.html'"></ng-include>
+
+<div class="col-sm-9 col-lg-10 container charts">
+    <div id="chart-day-button">
+        <h2>Real-time, Hourly and Daily Charts</h2>
+        <p>In the following charts you will check your instantaneous, hourly and daily consumption</p>
+        <div class="col-xs-11 col-sm-offset-1" ng-controller="PowerController">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation active"><a href="../#!/charts#chart-hourly" aria-controls="chart-month" role="tab" data-toggle="tab">Hourly</a></li>
+                <li role="presentation"><a href="../#!/charts#chart-daily" aria-controls="chart-year" role="tab" data-toggle="tab">Daily</a></li>
+                <li role="presentation"><a href="../#!/charts#chart-now" aria-controls="chart-now" role="tab" data-toggle="tab">Real-time</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="chart-hourly"></div>
+                <div role="tabpanel" class="tab-pane" id="chart-daily"></div>
+                <div role="tabpanel" class="tab-pane" id="chart-now"></div>
+            </div>
+        </div>
+    </div>
+</div>

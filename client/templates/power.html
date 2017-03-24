@@ -1,0 +1,46 @@
+<ng-include src="'/templates/navbar.html'"></ng-include>
+
+<div class="col-sm-9 col-lg-10 container power">
+    <div id="power-day-button">
+        <h2>Your Instantaneous Power</h2>
+        <p>Your contracted power is an important part of your energy bill. Here you can see your maximum power achieved and compared it to the contracted power. If your maximum power is far from you contracted power, change it and save money </p>
+        <div class="row">
+            <div class="col-md-5 col-md-offset-1">
+                <h3>Current power: <span>{{current}} W </span></h3>
+                <h3>Last read at: <span>{{date}} </span></h3>
+            </div>
+            <div class="col-md-4 col-md-offset-1 statusPower">
+                <div class="col-xs-12 statusGoodPower">
+                    <h3 ng-show="showStatusPower()">Your Contracted Power is FINE!!</h3>
+                </div>
+                <div class="col-xs-12 statusBadPower">
+                    <h3 ng-show="!showStatusPower()">Your Maximum Power is a bit HIGH!!</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-sm-offset-1 circle-max-power">
+        <h4>Your Maximum Power</h4>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 160 160">
+            <g>
+                <circle style="fill:transparent;stroke:#F2CF61;stroke-width:1;stroke-miterlimit:10;" cx="80" cy="80" r="80">
+                </circle>
+                <circle style="fill:transparent;stroke:#F2CF61;stroke-width:1;stroke-miterlimit:10;" cx="80" cy="80" r="85">
+                </circle>
+                <text class="circle-power-date" x="50%" y="50%" text-anchor="middle" fill="#F2CF61">{{maxPower}} kW</text>
+            </g>
+        </svg>
+    </div>
+    <div class="col-sm-4 col-sm-offset-2 circle-contracted-power">
+        <h4>Your Contracted Power</h4>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 160 160">
+            <g>
+                <circle style="fill:transparent;stroke:#F2CF61;stroke-width:1;stroke-miterlimit:10;" cx="80" cy="80" r="80">
+                </circle>
+                <circle style="fill:transparent;stroke:#F2CF61;stroke-width:1;stroke-miterlimit:10;" cx="80" cy="80" r="85">
+                </circle>
+                <text class="circle-power-date" x="50%" y="50%" text-anchor="middle" fill="#F2CF61">{{contractedPower}} kW</text>
+            </g>
+        </svg>
+    </div>
+</div>

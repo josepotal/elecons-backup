@@ -1,0 +1,94 @@
+// div 
+//   border: 1px solid red
+body
+  background: #3E4852
+  
+.background-filter
+  background: rgba(0, 0, 0, 0.6);
+  background-size: cover
+  left: 0;
+  height: 100%
+  position: relative;
+  padding-bottom: 80px
+
+.background-img
+  background-image: url("../img/background-img.jpg")
+  background-size: cover
+  display: block
+  height: 100%
+  left: 0
+  position: relative
+  right: 0
+  z-index: 1
+
+.fa.fa-bolt, .fa.fa-bar-chart, .fa.fa-money
+  color: #4AB8A1
+
+.main-left
+  padding-left: 10px
+  margin-bottom: 70px
+  h1 
+    font-size: 40px
+    color: #4AB8A1
+    line-height: 55px
+    //font-weight: bold
+    padding-top: 50px
+    padding-bottom: 20px
+    span
+      color: #F2CF61
+  button
+    border: 2px solid #4AB8A1
+    border-radius: 25px
+    background-color: Transparent
+    text-align: center
+    a
+      font-size: 20px
+      font-weight: bold
+      color: #F2CF61
+    a:hover
+      color: white
+
+.main-right
+  padding-top: 40px
+  margin-bottom: 20px
+  display: flex
+  flex-direction: column
+  h2
+    font-size: 35px
+    padding-top: 20px
+    //font-weight: bold
+    color: #4AB8A1
+    padding-bottom: 30px
+  .features-list
+    padding-bottom: 30px
+    justify-content: center
+    h3
+      font-size: 25px
+      //font-weight: bold
+      color: #F2CF61
+      padding-left: 20px
+      margin-top: 0px
+      margin-bottom: 0px
+      //text-align: center
+      vertical-align: center
+    
+@media all and (max-width: 450px )
+  .main-left
+    margin: 0px auto
+    text-align: center
+    h1
+      padding-top: 10px
+  .main-right
+    padding-top: 5px
+    margin-bottom: 20px
+    display: flex
+    flex-direction: column
+    h2
+      font-size: 35px
+      padding-top: 10px
+      text-align: center
+    .features-list
+      display: inline-block
+
+    
+    
