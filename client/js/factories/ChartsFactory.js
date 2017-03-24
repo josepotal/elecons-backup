@@ -193,7 +193,6 @@
 
             ApiFactory.getUser()
                 .then(function(response) {
-            
 
                     // create the chart
                     Highcharts.stockChart('chart-daily', {
