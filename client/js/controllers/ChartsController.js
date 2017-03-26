@@ -9,7 +9,7 @@
         $scope.$route = $route;
         var vm = this;
 
-        ChartsFactory.getChartNow();
+        //ChartsFactory.getChartNow();
         ChartsFactory.getChartHourly();
         ChartsFactory.getChartDaily();
 

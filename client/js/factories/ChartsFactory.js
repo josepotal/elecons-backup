@@ -4,10 +4,10 @@
         .module('EleconsApp')
         .factory('ChartsFactory', ChartsFactory)
 
-    function ChartsFactory($rootScope, PricesFactory, socketio, ApiFactory) {
+    function ChartsFactory($rootScope, PricesFactory, ApiFactory) {
 
         var service = {
-            getChartNow: getChartNow,
+            //getChartNow: getChartNow,
             getChartHourly: getChartHourly,
             getChartDaily: getChartDaily
         };
@@ -16,78 +16,78 @@
 
     // Mehtods of the factory
         // CHART REAL-TIME
-        function getChartNow() {
-            Highcharts.setOptions({
-                global: {
-                    useUTC: false
-                }
-            });
+        // function getChartNow() {
+        //     Highcharts.setOptions({
+        //         global: {
+        //             useUTC: false
+        //         }
+        //     });
 
-            Highcharts.chart('chart-now', {
-                chart: {
-                    type: 'spline',
-                    animation: Highcharts.svg, // don't animate in old IE
-                    marginRight: 10,
-                    events: {
-                        load: function() {
-                            var series = this.series[0]
-                            socketio.on('new read', function(data) {
-                                var x = (new Date()).getTime(), // current time
-                                    y = data.current;
-                                series.addPoint([x, y], true, true);
-                            });
-                        }
-                    }
-                },
-                title: {
-                    text: 'Real-time Chart: Instantaneous Power'
-                },
-                xAxis: {
-                    type: 'datetime',
-                    tickPixelInterval: 150
-                },
-                yAxis: {
-                    title: {
-                        text: 'Instant Power in kW'
-                    },
-                    plotLines: [{
-                        value: 0,
-                        width: 1,
-                        color: '#808080'
-                    }]
-                },
-                tooltip: {
-                    formatter: function() {
-                        return '<b>' + this.series.name + '</b><br/>' +
-                            Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
-                            Highcharts.numberFormat(this.y, 2);
-                    }
-                },
-                legend: {
-                    enabled: false
-                },
-                exporting: {
-                    enabled: false
-                },
-                series: [{
-                    name: 'Power in W',
-                    data: (function() {
-                        // generate an array of random data
-                        var data = [],
-                            time = (new Date()).getTime(),
-                            i;
+        //     Highcharts.chart('chart-now', {
+        //         chart: {
+        //             type: 'spline',
+        //             animation: Highcharts.svg, // don't animate in old IE
+        //             marginRight: 10,
+        //             events: {
+        //                 load: function() {
+        //                     var series = this.series[0]
+        //                     socketio.on('new read', function(data) {
+        //                         var x = (new Date()).getTime(), // current time
+        //                             y = data.current;
+        //                         series.addPoint([x, y], true, true);
+        //                     });
+        //                 }
+        //             }
+        //         },
+        //         title: {
+        //             text: 'Real-time Chart: Instantaneous Power'
+        //         },
+        //         xAxis: {
+        //             type: 'datetime',
+        //             tickPixelInterval: 150
+        //         },
+        //         yAxis: {
+        //             title: {
+        //                 text: 'Instant Power in kW'
+        //             },
+        //             plotLines: [{
+        //                 value: 0,
+        //                 width: 1,
+        //                 color: '#808080'
+        //             }]
+        //         },
+        //         tooltip: {
+        //             formatter: function() {
+        //                 return '<b>' + this.series.name + '</b><br/>' +
+        //                     Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+        //                     Highcharts.numberFormat(this.y, 2);
+        //             }
+        //         },
+        //         legend: {
+        //             enabled: false
+        //         },
+        //         exporting: {
+        //             enabled: false
+        //         },
+        //         series: [{
+        //             name: 'Power in W',
+        //             data: (function() {
+        //                 // generate an array of random data
+        //                 var data = [],
+        //                     time = (new Date()).getTime(),
+        //                     i;
 
-                        for (i = -19; i <= 0; i += 1) {
-                            data.push({
-                                x: time + i * 1000,
-                                y: data.current
-                            });
-                        }
-                        return data;
-                    }())
-                }]
-            });
-        };
+        //                 for (i = -19; i <= 0; i += 1) {
+        //                     data.push({
+        //                         x: time + i * 1000,
+        //                         y: data.current
+        //                     });
+        //                 }
+        //                 return data;
+        //             }())
+        //         }]
+        //     });
+        // };
         // CHART HOURLY
         function getChartHourly() {
 

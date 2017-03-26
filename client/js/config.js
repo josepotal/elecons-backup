@@ -40,13 +40,13 @@ angular.module('EleconsApp')
                 activetab: 'charts',
                 secure: true
             })
-            .when('/power', {
-                templateUrl: '/templates/power.html',
-                controller: 'PowerController',
-                controllerAs: 'vm',
-                activetab: 'power',
-                secure: true
-            })
+            // .when('/power', {
+            //     templateUrl: '/templates/power.html',
+            //     controller: 'PowerController',
+            //     controllerAs: 'vm',
+            //     activetab: 'power',
+            //     secure: true
+            //})
             .when('/prices', {
                 templateUrl: '/templates/prices.html',
                 controller: 'PricesController',

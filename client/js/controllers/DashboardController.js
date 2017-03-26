@@ -25,8 +25,18 @@
                 return false
             }
         }
+        
+        let electricPrice = 0.11
+            ApiFactory.getUser()
+                .then(response => {
+                vm.consumption2016 = response.data.dataUser.monthly[0]
+                vm.consumption2017 = response.data.dataUser.monthly[1]
 
-        DashboardFactory.getMonthData();
+                vm.savingsKWH = vm.consumption2016 - vm.consumption2017;
+                vm.savingsEuro = vm.savingsKWH * electricPrice;
+            })
+
+        //DashboardFactory.getMonthData();
         DashboardFactory.getComparison();
     }
 })()
