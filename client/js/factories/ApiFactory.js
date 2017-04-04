@@ -5,6 +5,8 @@
         .module('EleconsApp')
         .factory('ApiFactory', ApiFactory)
 
+    ApiFactory.$inject = ['$http', '$rootScope', '$routeParams']
+
     function ApiFactory($http, $rootScope, $routeParams) {
 
         return {

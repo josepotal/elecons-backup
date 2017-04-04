@@ -42,11 +42,10 @@
                             return positionArray
                         }
                     })
-
-                    $rootScope.neighboursPosition = positionArray
-                    $window.sessionStorage.neighboursPosition = positionArray
-                    $rootScope.allSavings = aSavings
-
+                    console.log(positionArray)
+                    return positionArray
+                    //$window.sessionStorage.neighboursPosition = positionArray
+                    //$rootScope.allSavings = aSavings
                 })
         }
 

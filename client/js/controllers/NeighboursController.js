@@ -23,6 +23,7 @@
             });
 
         NeighboursFactory.getNeighbours();
-        NeighboursFactory.getNeighboursPosition();
+        NeighboursFactory.getNeighboursPosition()
+            
     }
 })();

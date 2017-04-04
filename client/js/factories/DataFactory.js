@@ -1,5 +1,15 @@
-angular.module('EleconsApp')
-  .factory('DataFactory', function ($http){
+angular
+
+  .module('EleconsApp')
+  .factory('DataFactory', DataFactory)
+
+  DataFactory.$inject = ['$http']
+
+  function DataFactory($http){
+
+    return { 
+      getPrivateData 
+    }
 
     function getPrivateData() {
       const url = '/private'
@@ -7,6 +17,4 @@ angular.module('EleconsApp')
         .then( response => response.data )
     }
 
-    return { getPrivateData }
-
-  })
+  }
