@@ -8,22 +8,22 @@
 
         var service = {
             getComparison: getComparison,
-            getMonthData: getMonthData
+            // getMonthData: getMonthData
         };
 
         return service;
 
-        function getMonthData() {
-            let electricPrice = 0.11
-            ApiFactory.getUser()
-                .then(response => {
-                let consumption2016 = response.data.dataUser.monthly[0]
-                let consumption2017 = response.data.dataUser.monthly[1]
+        // function getMonthData() {
+        //     let electricPrice = 0.11
+        //     ApiFactory.getUser()
+        //         .then(response => {
+        //         let consumption2016 = response.data.dataUser.monthly[0]
+        //         let consumption2017 = response.data.dataUser.monthly[1]
 
-                let savingsKWH = consumption2016 - consumption2017;
-                let savingsEuro = savingsKWH * electricPrice;
-            })
-        }
+        //         let savingsKWH = consumption2016 - consumption2017;
+        //         let savingsEuro = savingsKWH * electricPrice;
+        //     })
+        // }
 
         function getComparison() {
 

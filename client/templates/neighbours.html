@@ -11,12 +11,12 @@
             </div>
             <div class="col-md-4 col-md-offset-1">
                 <div class="col-xs-12 statusGoodDashboard">
-                    <h3 ng-show="showStatusNeighbours()">You are a Super Energy Efficient Consumer!!</h3>
+                    <h3 ng-show="vm.showStatusNeighbours()">You are a Super Energy Efficient Consumer!!</h3>
                 </div>
                 <div class="col-xs-12 statusBadDashboard">
-                    <h3 ng-show="!showStatusNeighbours()">You can do it better... Try to be more Efficient!!</h3>
+                    <h3 ng-show="!vm.showStatusNeighbours()">You can do it better... Try to be more Efficient!!</h3>
                 </div>
-                <div class="col-xs-12" ng-controller="ApiController as vm">
+                <div class="col-xs-12">
                     <h4>Ranking</h4>
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 160 160">
                         <g>
@@ -24,7 +24,7 @@
                             </circle>
                             <circle style="fill:transparent;stroke:#F2CF61;stroke-width:1;stroke-miterlimit:10;" cx="80" cy="80" r="85">
                             </circle>
-                            <text class="circle-power-date" x="50%" y="30%" text-anchor="middle" fill="#F2CF61"> # {{neighboursPosition}}</text>
+                            <text class="circle-power-date" x="50%" y="30%" text-anchor="middle" fill="#F2CF61"> # {{vm.neighboursPosition}}</text>
                             <text class="circle-power" x="50%" y="50%" text-anchor="middle" fill="#4AB8A1">out of</text>
                             <text class="circle-power-date" x="50%" y="70%" text-anchor="middle" fill="#F2CF61"> {{vm.users.length}} users</text>
                         </g>

@@ -9,12 +9,15 @@
         $scope.$route = $route
         var vm = this;
 
+        //chart neighbours comparison
+        NeighboursFactory.getNeighbours();
+
         ApiFactory.getUsers()
             .then(function(response) {
                 let aUsers = response.data.users;
-
-                $scope.showStatusNeighbours = function() {
-                    if ($rootScope.neighboursPosition <= (aUsers.length / 2)) {
+                vm.users = aUsers 
+                vm.showStatusNeighbours = function() {
+                    if (vm.neighboursPosition <= (aUsers.length / 2)) {
                         return true;
                     } else {
                         return false;
@@ -22,8 +25,30 @@
                 };
             });
 
-        NeighboursFactory.getNeighbours();
+        ApiFactory.getUser()
+            .then(({ data }) => {
+                vm.username = data.username
+            });
+
+
+        //fillings positioning data values
         NeighboursFactory.getNeighboursPosition()
+            .then(getPosition)
+        
+
+        function getPosition(response) {
+            let positionArray = 0
+            
+            let positioning = response.forEach(function(elem, index) {
+                if (elem.username == vm.username) {
+                    positionArray = index + 1
+                    return positionArray
+                }
+
+            })
+            vm.neighboursPosition = positionArray
+
+        }
             
     }
 })();
